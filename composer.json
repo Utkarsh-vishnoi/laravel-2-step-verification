@@ -1,0 +1,19 @@
+{
+    "name": "utkarsh/laravel-two-step-verification",
+    "description": "A laravel package which adds the 2 step verification api.",
+    "type": "laravel-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Utkarsh Vishnoi",
+            "email": "utkarshvishnoi25@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+    "psr-4": {
+      "Utkarsh\\TwoStepVerification\\": "src/"
+    }
+  },
+    "require": {}
+}
