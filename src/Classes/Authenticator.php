@@ -3,6 +3,7 @@
 namespace Utkarsh\TwoStepVerification\Classes;
 
 use Utkarsh\TwoStepVerification\Classes\Base32;
+use Utkarsh\QrCode\Classes\QRcode;
 
 class Authenticator {
 		
@@ -68,9 +69,7 @@ class Authenticator {
     }
     
     public static function getBarCodeUrl($username, $domain, $secretkey, $issuer) {
-      $url = "http://chart.apis.google.com/chart";
-      $url = $url."?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/";
-      $url = $url.$username . "@" . $domain . "%3Fsecret%3D" . $secretkey . '%26issuer%3D' . rawurlencode($issuer);
+      $url = QRcode::svg("otpauth://totp/" . $username . "@" . $domain . "?secret=" . $secretkey . "&issuer=" . $issuer, false, "H", 4, 4);
       
       return $url;
     }
