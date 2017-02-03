@@ -4,10 +4,10 @@
     "type": "laravel-plugin",
     "license": "MIT",
     "require": {
-        "utkarsh/laravel-qrcode": "1.0.*"
+        "utkarsh/laravel-qrcode": "2.*"
     },
     "require-dev": {
-        "utkarsh/laravel-qrcode": "1.0.*"
+        "utkarsh/laravel-qrcode": "2.*"
     },
     "authors": [
         {
