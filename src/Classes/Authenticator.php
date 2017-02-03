@@ -29,6 +29,11 @@ class Authenticator {
 			return false;
 		}
 
+    public static function generateTokenCode($key) {
+      return Base32::encode($key);
+      
+    }
+
 
     public static function getTokenCode($secretkey,$rangein30s = 3) {
                         $result = "";
@@ -69,7 +74,7 @@ class Authenticator {
     }
     
     public static function getBarCodeUrl($username, $domain, $secretkey, $issuer) {
-      $url = QRcode::svg("otpauth://totp/" . $username . "@" . $domain . "?secret=" . $secretkey . "&issuer=" . $issuer, false, "H", 4, 4);
+      $url = QRcode::png("otpauth://totp/" . $username . "@" . $domain . "?secret=" . $secretkey . "&issuer=" . $issuer, false, "H", 4, 4);
       
       return $url;
     }
