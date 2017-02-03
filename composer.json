@@ -3,6 +3,12 @@
     "description": "A laravel package which adds the 2 step verification api.",
     "type": "laravel-plugin",
     "license": "MIT",
+    "require": {
+        "utkarsh/laravel-qrcode": "^1.0.1"
+    },
+    "require-dev": {
+        "utkarsh/laravel-qrcode": "^1.0.1"
+    },
     "authors": [
         {
             "name": "Utkarsh Vishnoi",
