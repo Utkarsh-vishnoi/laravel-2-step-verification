@@ -27,7 +27,7 @@ class TwoStepVerificationServiceProvider extends ServiceProvider
     {
         App::bind('TwoStepVerification', function()
         {
-            return new Utkarsh\TwoStepVerification\Classes\Authenticator;
+            return new Authenticator;
         });
     }
 }
