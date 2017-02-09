@@ -74,7 +74,8 @@ class Authenticator {
     }
     
     public static function getBarCodeUrl($username, $domain, $secretkey, $issuer) {
-      $url = QRcode::png("otpauth://totp/" . $username . "@" . $domain . "?secret=" . $secretkey . "&issuer=" . $issuer, false, "H", 4, 4);
+      $secret = self::generateTokenCode($secretkey);
+      $url = QRcode::png("otpauth://totp/" . $username . "@" . $domain . "?secret=" . $secret . "&issuer=" . $issuer, false, "H", 4, 4);
       
       return $url;
     }
